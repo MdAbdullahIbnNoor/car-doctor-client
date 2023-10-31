@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { AiOutlineArrowRight } from "react-icons/ai";
+// import { AiOutlineArrowRight } from "react-icons/ai";
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
     const [services, setServices] = useState([])
 
     useEffect(() => {
-        fetch('services.json')
+        fetch('http://localhost:5000/services')
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');

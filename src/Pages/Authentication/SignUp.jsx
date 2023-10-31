@@ -5,7 +5,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 
 const SignUp = () => {
 
-    const {createUser} = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext)
 
     const handleSignUp = e => {
         e.preventDefault();
@@ -13,14 +13,20 @@ const SignUp = () => {
         const name = form.name.value
         const email = form.email.value
         const password = form.password.value
-        console.log(name, email, password);
+        const password_confirmation = form.password_confirmation.value
+        if (password && password_confirmation) {
+            console.log(name, email, password);
 
-        createUser(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .then(error => console.log(error))
+            createUser(email, password)
+                .then(result => {
+                    const user = result.user;
+                    console.log(user);
+                })
+                .then(error => console.log(error))
+        }
+        else {
+            console.log("password didn't match");
+        }
 
     }
 
@@ -32,7 +38,7 @@ const SignUp = () => {
                     alt="Sample image" />
             </div>
             <div className="md:w-1/2 max-w-md">
-                
+
                 <div className="flex flex-col items-center pt-6 sm:justify-center sm:pt-0 bg-gray-50 mb-20">
                     <div>
                         <a href="/">
