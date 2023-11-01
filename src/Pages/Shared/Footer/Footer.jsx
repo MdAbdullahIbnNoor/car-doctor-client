@@ -3,7 +3,7 @@ import logo from './../../../assets/logo.svg';
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-base-200 text-base-content">
+        <footer className="footer p-10 bg-base-200 text-base-content w-full">
             <aside>
                 <img src={logo} className="w-20" />
                 <p>Car Doctor Ltd.<br />Providing reliable tech since 1992</p>

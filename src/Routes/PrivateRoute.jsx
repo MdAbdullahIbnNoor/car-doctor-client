@@ -8,14 +8,14 @@ const PrivateRoute = ({children}) => {
     // console.log(location.pathname);
 
     if(loading) {
-        return <progress className="progress w-56"></progress>
+        return <span className="loading loading-spinner loading-lg text-success mx-[550px] my-96"></span>
     }
 
     if(user?.email){
         return children;
     }
 
-    return <Navigate state={location.pathname} to="/login" replace></Navigate>;
+    return <Navigate state={location.pathname} to="/signin" replace></Navigate>;
 };
 
 export default PrivateRoute;

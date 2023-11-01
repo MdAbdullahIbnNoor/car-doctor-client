@@ -14,7 +14,7 @@ const SignUp = () => {
         const email = form.email.value
         const password = form.password.value
         const password_confirmation = form.password_confirmation.value
-        if (password && password_confirmation) {
+        if (password === password_confirmation) {
             console.log(name, email, password);
 
             createUser(email, password)
@@ -25,7 +25,7 @@ const SignUp = () => {
                 .then(error => console.log(error))
         }
         else {
-            console.log("password didn't match");
+            alert("password didn't match");
         }
 
     }
@@ -60,7 +60,7 @@ const SignUp = () => {
                                     <input
                                         type="text"
                                         name="name"
-                                        className="block w-full h-10 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        className="block w-full h-10 border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2"
                                     />
                                 </div>
                             </div>
@@ -75,7 +75,7 @@ const SignUp = () => {
                                     <input
                                         type="email"
                                         name="email"
-                                        className="block w-full h-10 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        className="block w-full h-10 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2"
                                     />
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ const SignUp = () => {
                                     <input
                                         type="password"
                                         name="password"
-                                        className="block w-full h-10 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        className="block w-full h-10 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2"
                                     />
                                 </div>
                             </div>
@@ -105,7 +105,7 @@ const SignUp = () => {
                                     <input
                                         type="password"
                                         name="password_confirmation"
-                                        className="block w-full h-10 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        className="block w-full h-10 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2"
                                     />
                                 </div>
                             </div>
@@ -129,7 +129,7 @@ const SignUp = () => {
                                 </Link>
                             </span>
                         </div>
-                        <div className="flex items-center w-full my-4">
+                        {/* <div className="flex items-center w-full my-4">
                             <hr className="w-full" />
                             <p className="px-3 ">OR</p>
                             <hr className="w-full" />
@@ -149,7 +149,7 @@ const SignUp = () => {
                                 </svg>
                                 <p>Login with Google</p>
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
